@@ -32,13 +32,13 @@ public class userDbUtilImplTest {
 
     @Before
     public void setUp() throws Exception {
-        // Initialize the object before each test
+
         userDbUtil = new userDbUtilImpl();
     }
 
     @After
     public void tearDown() throws Exception {
-        // Cleanup after each test
+
     }
 
     @Test

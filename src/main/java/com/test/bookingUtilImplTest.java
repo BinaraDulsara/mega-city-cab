@@ -58,10 +58,10 @@ public class bookingUtilImplTest {
 
     @Test
     public void testGetAllBookingsOfUser() throws SQLException {
-        // Ensure booking is added first
+
         bookingUtil.addBooking(testBooking);
 
-        // Retrieve bookings for the given user
+
         List<booking> bookings = bookingUtil.getAllBookingsOfUser("2");
         assertNotNull("Bookings list should not be null", bookings);
         assertFalse("Bookings list should not be empty", bookings.isEmpty());
@@ -79,11 +79,11 @@ public class bookingUtilImplTest {
 
     @Test
     public void testDeleteBookingById() {
-        // First, add a booking
+
         boolean added = bookingUtil.addBooking(testBooking);
         assertTrue("Booking should be added before deletion", added);
 
-        // Retrieve the booking ID
+
         List<booking> bookings;
         try {
             bookings = bookingUtil.getAllBookingsOfUser("2");

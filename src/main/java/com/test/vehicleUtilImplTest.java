@@ -32,13 +32,13 @@ public class vehicleUtilImplTest {
 
     @Before
     public void setUp() throws Exception {
-        // Initialize the object before each test
+
         vehicleUtil = new vehicleUtilImpl();
     }
 
     @After
     public void tearDown() throws Exception {
-        // Cleanup after each test if needed
+
     }
 
     @Test
