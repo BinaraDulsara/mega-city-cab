@@ -1,7 +1,7 @@
 package com.model;
 
 
-public class application {
+public class Application {
 	
 	private int id;
     private String vType;
@@ -11,8 +11,8 @@ public class application {
     private double price;
     private String ownerId;
     private String status;
-	public application(String vType, String vModelName, String vBrand, int noOfSeats, double price,
-			String ownerId) {
+	public Application(String vType, String vModelName, String vBrand, int noOfSeats, double price,
+					   String ownerId) {
 		this.id=0;
 		this.vType = vType;
 		this.vModelName = vModelName;

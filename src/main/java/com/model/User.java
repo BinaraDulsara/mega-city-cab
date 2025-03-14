@@ -1,6 +1,6 @@
 package com.model;
 
-public class user {
+public class User {
     private int id;
     private String name;
     private String password;
@@ -9,11 +9,11 @@ public class user {
     private String role;
 
     // Default constructor
-    public user() {
+    public User() {
     }
 
     // Overloaded constructor with all attributes
-    public user( String name, String password, String gmail, String phoneNumber, String role) {
+    public User(String name, String password, String gmail, String phoneNumber, String role) {
         this.id = 0;
         this.name = name;
         this.password = password;

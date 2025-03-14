@@ -4,9 +4,9 @@ import static org.junit.Assert.*;
 import java.sql.SQLException;
 import java.util.List;
 
-import com.dao.impl.newUserUtilImpl;
-import com.model.newUser;
-import com.model.user;
+import com.dao.impl.NewUserUtilImpl;
+import com.model.NewUser;
+import com.model.User;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;
@@ -14,9 +14,9 @@ import org.junit.Test;
 import org.junit.rules.TestWatcher;
 import org.junit.runner.Description;
 
-public class newUserUtilImplTest {
+public class NewUserUtilImplTest {
 
-    private newUserUtilImpl newUserUtil;
+    private NewUserUtilImpl newUserUtil;
 
     @Rule
     public TestWatcher watchman = new TestWatcher() {
@@ -34,7 +34,7 @@ public class newUserUtilImplTest {
     @Before
     public void setUp() throws Exception {
         // Initialize the object before each test
-        newUserUtil = new newUserUtilImpl();
+        newUserUtil = new NewUserUtilImpl();
     }
 
     @After
@@ -44,7 +44,7 @@ public class newUserUtilImplTest {
 
     @Test
     public void testAddUser() {
-        user newuser1 = new user("John Doe", "password123", "johndoe@gmail.com", "1234567890", "user");
+        User newuser1 = new User("John Doe", "password123", "johndoe@gmail.com", "1234567890", "user");
         boolean result = newUserUtil.addUser(newuser1);
         assertTrue("User addition should be successful", result);
     }
@@ -52,7 +52,7 @@ public class newUserUtilImplTest {
     @Test
     public void testGetAllNewUsers() {
         try {
-            List<newUser> users = newUserUtil.getAllNewUsers();
+            List<NewUser> users = newUserUtil.getAllNewUsers();
             assertNotNull("List should not be null", users);
             assertFalse("List should not be empty", users.isEmpty());
         } catch (SQLException e) {

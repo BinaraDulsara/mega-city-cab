@@ -3,10 +3,10 @@ package com.controller;
 import java.io.IOException;
 import java.util.List;
 
-import com.dao.impl.vehicleUtilImpl;
+import com.dao.impl.VehicleUtilImpl;
 import com.model.vehicle;
-import com.model.application;
-import com.dao.impl.applicationUtilImpl;
+import com.model.Application;
+import com.dao.impl.ApplicationUtilImpl;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -19,10 +19,10 @@ import javax.servlet.http.HttpServletResponse;
  * Servlet implementation class applicationSevlet
  */
 @WebServlet("/applicationServlet")
-public class applicationSevlet extends HttpServlet {
+public class ApplicationSevlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private applicationUtilImpl applicationUtilImpl = new applicationUtilImpl();
-	private vehicleUtilImpl vehicleUtilImpl = new vehicleUtilImpl();
+	private ApplicationUtilImpl applicationUtilImpl = new ApplicationUtilImpl();
+	private VehicleUtilImpl vehicleUtilImpl = new VehicleUtilImpl();
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -63,7 +63,7 @@ public class applicationSevlet extends HttpServlet {
 
 			try {
 
-				List<application> Applications = applicationUtilImpl.getAllRegistartions();
+				List<Application> Applications = applicationUtilImpl.getAllRegistartions();
 				   if (!Applications.isEmpty()) {
 		                response.getWriter().println("hi");
 		                request.setAttribute("Applications", Applications);
@@ -101,7 +101,7 @@ public class applicationSevlet extends HttpServlet {
 
 			if(res) {
 				response.getWriter().println("deleted");
-				List<application> Applications = applicationUtilImpl.getAllRegistartionsOfUser(userId);
+				List<Application> Applications = applicationUtilImpl.getAllRegistartionsOfUser(userId);
 
 				request.setAttribute("Applications", Applications);
                 RequestDispatcher dispatcher = request.getRequestDispatcher("carOwnerSeeRegistrations.jsp?result=true");

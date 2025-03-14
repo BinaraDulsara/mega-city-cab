@@ -3,8 +3,8 @@ package com.controller;
 //import com.db.DBconnect;
 import java.io.IOException;
 
-import com.dao.impl.applicationUtilImpl;
-import com.model.application;
+import com.dao.impl.ApplicationUtilImpl;
+import com.model.Application;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -14,9 +14,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @WebServlet("/submitApplication")
-public class submitApplication extends HttpServlet {
+public class SubmitApplication extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-    private applicationUtilImpl applicationUtilImpl = new applicationUtilImpl();
+    private ApplicationUtilImpl applicationUtilImpl = new ApplicationUtilImpl();
      
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -35,7 +35,7 @@ public class submitApplication extends HttpServlet {
         
 
         // Create a VehicleApplication object
-       application vehicleApp = new application(vType, vModelName, vBrand, noOfSeats, price, ownerId);
+       Application vehicleApp = new Application(vType, vModelName, vBrand, noOfSeats, price, ownerId);
 
         System.out.println(vehicleApp);
 

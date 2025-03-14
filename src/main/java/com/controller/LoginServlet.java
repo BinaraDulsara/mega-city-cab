@@ -1,7 +1,7 @@
 package com.controller;
 
-import com.model.user;
-import com.dao.impl.userDbUtilImpl;
+import com.model.User;
+import com.dao.impl.UserDbUtilImpl;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -17,9 +17,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 @WebServlet("/loginServlet")
-public class loginServlet extends HttpServlet {
+public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private userDbUtilImpl userDbUtilImpl = new userDbUtilImpl();
+	private UserDbUtilImpl userDbUtilImpl = new UserDbUtilImpl();
 
    
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -34,7 +34,7 @@ public class loginServlet extends HttpServlet {
 		
 		if (isTrue == true) {
 			out.println("alert('Your username or password is correct');");
-			List<user>userDetails = userDbUtilImpl.getUser(userName);
+			List<User>userDetails = userDbUtilImpl.getUser(userName);
 			request.setAttribute("userDetails", userDetails);
 			
             HttpSession session = request.getSession(); // Retrieve the session or create a new one if it doesn't exist

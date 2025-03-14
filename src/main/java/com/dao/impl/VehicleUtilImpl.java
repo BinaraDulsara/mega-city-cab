@@ -1,6 +1,6 @@
 package com.dao.impl;
 
-import com.dao.vehicleUtil;
+import com.dao.VehicleUtil;
 import com.db.DBconnect;
 import com.model.vehicle;
 
@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class vehicleUtilImpl implements vehicleUtil {
+public class VehicleUtilImpl implements VehicleUtil {
 
     private static Connection con = null;
     private static final ResultSet rs = null;

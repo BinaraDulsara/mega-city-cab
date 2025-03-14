@@ -1,6 +1,6 @@
 package com.controller;
-import com.dao.impl.userDbUtilImpl;
-import com.model.user;
+import com.dao.impl.UserDbUtilImpl;
+import com.model.User;
 
 import java.io.IOException;
 import java.util.List;
@@ -13,9 +13,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @WebServlet("/viewUsersServelet")
-public class viewUsersServelet extends HttpServlet {
+public class ViewUsersServelet extends HttpServlet {
     private static final long serialVersionUID = 1L;
-    private userDbUtilImpl userDbUtilImpl = new userDbUtilImpl();
+    private UserDbUtilImpl userDbUtilImpl = new UserDbUtilImpl();
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -26,7 +26,7 @@ public class viewUsersServelet extends HttpServlet {
 
         try {
             // Fetch all users from the database
-            List<user> users = userDbUtilImpl.getAllUsers();
+            List<User> users = userDbUtilImpl.getAllUsers();
             
             // Set users as a request attribute
             request.setAttribute("users", users);

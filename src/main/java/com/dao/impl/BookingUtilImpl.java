@@ -7,12 +7,12 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.dao.bookingUtil;
+import com.dao.BookingUtil;
 import com.db.DBconnect;
 import com.model.booking;
 
 
-public class bookingUtilImpl implements bookingUtil {
+public class BookingUtilImpl implements BookingUtil {
 
 	
 	

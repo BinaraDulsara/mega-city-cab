@@ -4,8 +4,8 @@ import static org.junit.Assert.*;
 import java.sql.SQLException;
 import java.util.List;
 
-import com.dao.impl.userDbUtilImpl;
-import com.model.user;
+import com.dao.impl.UserDbUtilImpl;
+import com.model.User;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;
@@ -13,9 +13,9 @@ import org.junit.Test;
 import org.junit.rules.TestWatcher;
 import org.junit.runner.Description;
 
-public class userDbUtilImplTest {
+public class UserDbUtilImplTest {
 
-    private userDbUtilImpl userDbUtil;
+    private UserDbUtilImpl userDbUtil;
 
     @Rule
     public TestWatcher watchman = new TestWatcher() {
@@ -33,7 +33,7 @@ public class userDbUtilImplTest {
     @Before
     public void setUp() throws Exception {
         // Initialize the object before each test
-        userDbUtil = new userDbUtilImpl();
+        userDbUtil = new UserDbUtilImpl();
     }
 
     @After
@@ -52,7 +52,7 @@ public class userDbUtilImplTest {
     @Test
     public void testGetUser() {
         String userName = "kithsandu@gmail.com";
-        List<user> users = userDbUtil.getUser(userName);
+        List<User> users = userDbUtil.getUser(userName);
         assertNotNull("Users list should not be null", users);
         assertFalse("Users list should not be empty", users.isEmpty());
     }
@@ -68,7 +68,7 @@ public class userDbUtilImplTest {
     @Test
     public void testGetAllUsers() {
         try {
-            List<user> users = userDbUtil.getAllUsers();
+            List<User> users = userDbUtil.getAllUsers();
             assertNotNull("Users list should not be null", users);
             assertFalse("Users list should not be empty", users.isEmpty());
         } catch (SQLException e) {
@@ -79,7 +79,7 @@ public class userDbUtilImplTest {
     @Test
     public void testGetUserFromId() {
         String id = "3"; // Assuming a user with ID 3 exists
-        user retrievedUser = userDbUtil.getUserFromId(id);
+        User retrievedUser = userDbUtil.getUserFromId(id);
         assertNotNull("User should not be null", retrievedUser);
         assertEquals("User ID should be 3", "3", String.valueOf(retrievedUser.getId()));
     }

@@ -5,7 +5,7 @@ import static org.junit.Assert.*;
 import java.sql.SQLException;
 import java.util.List;
 
-import com.dao.impl.bookingUtilImpl;
+import com.dao.impl.BookingUtilImpl;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;
@@ -16,10 +16,10 @@ import com.model.booking;
 import org.junit.rules.TestWatcher;
 import org.junit.runner.Description;
 
-public class bookingUtilImplTest {
+public class BookingUtilImplTest {
 
     private booking testBooking;
-    private bookingUtilImpl bookingUtil;
+    private BookingUtilImpl bookingUtil;
 
     @Rule
     public TestWatcher watchman = new TestWatcher() {
@@ -38,7 +38,7 @@ public class bookingUtilImplTest {
     public void setUp() throws Exception {
         // Create a test booking object
         testBooking = new booking("2", "2", "2024-05-08", 1, 5000);
-        bookingUtil = new bookingUtilImpl();
+        bookingUtil = new BookingUtilImpl();
 
         // Ensure the database connection is established
         DBconnect.getConnection();

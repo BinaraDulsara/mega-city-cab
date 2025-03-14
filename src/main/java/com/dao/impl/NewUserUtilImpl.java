@@ -4,16 +4,16 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.dao.newUserUtil;
+import com.dao.NewUserUtil;
 import com.db.DBconnect;
-import com.model.newUser;
-import com.model.user;
+import com.model.NewUser;
+import com.model.User;
 
-public class newUserUtilImpl extends userDbUtilImpl implements newUserUtil {
+public class NewUserUtilImpl extends UserDbUtilImpl implements NewUserUtil {
 
 
 
-	public  boolean addUser(user newuser1) {
+	public  boolean addUser(User newuser1) {
 	    	
 	    	
     	 try {       
@@ -43,8 +43,8 @@ public class newUserUtilImpl extends userDbUtilImpl implements newUserUtil {
 		    }
 	 
 	 
-	 public  List<newUser> getAllNewUsers() throws SQLException {
-		    List<newUser> users = new ArrayList<>();
+	 public  List<NewUser> getAllNewUsers() throws SQLException {
+		    List<NewUser> users = new ArrayList<>();
 		    
 		    try {
 		    	con=DBconnect.getConnection();
@@ -58,7 +58,7 @@ public class newUserUtilImpl extends userDbUtilImpl implements newUserUtil {
 			            String email = rs.getString("gmail");
 			            String phoneNumber = rs.getString("phonNumber");
 			            String role = rs.getString("role");
-			            newUser user = new newUser(name, password, email, phoneNumber, role,"unverified");
+			            NewUser user = new NewUser(name, password, email, phoneNumber, role,"unverified");
 			            user.setId(id);
 			            users.add(user);
 			        }

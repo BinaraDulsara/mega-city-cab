@@ -10,15 +10,15 @@ import java.util.List;
 
 import com.dao.ApplicationUtill;
 import com.db.DBconnect;
-import com.model.application;
+import com.model.Application;
 import com.model.vehicle;
 
-public class applicationUtilImpl implements ApplicationUtill {
+public class ApplicationUtilImpl implements ApplicationUtill {
 	private static Connection con = null;
 	private static ResultSet rs = null;
 	private static Statement stmt = null;
 	
-	public boolean insertData(application application1) {
+	public boolean insertData(Application application1) {
 	String sql =" ";
 	
 		try {
@@ -56,8 +56,8 @@ public class applicationUtilImpl implements ApplicationUtill {
 
 	}
 	
-	public List<application> getAllRegistartionsOfUser(String idn) throws SQLException {
-	    List<application> applications = new ArrayList<>();
+	public List<Application> getAllRegistartionsOfUser(String idn) throws SQLException {
+	    List<Application> Applications = new ArrayList<>();
 	    
 	    try {
 	    	con=DBconnect.getConnection();
@@ -72,10 +72,10 @@ public class applicationUtilImpl implements ApplicationUtill {
 		            int noOfSeats = rs.getInt("noOfSeats");
 		            Double price = rs.getDouble("price");
 		            String status = rs.getString("status");
-		            application regAppli = new application(vType, vModelName, vBrand, noOfSeats, price,idn);
+		            Application regAppli = new Application(vType, vModelName, vBrand, noOfSeats, price,idn);
 		            regAppli.setStatus(status);
 		            regAppli.setId(id);
-		            applications.add(regAppli);
+		            Applications.add(regAppli);
 		        }
 	    }catch(Exception e) {
 			e.printStackTrace();
@@ -84,11 +84,11 @@ public class applicationUtilImpl implements ApplicationUtill {
 	    
 	    
 	 
-	    return applications;
+	    return Applications;
 	}
 	
-	public List<application> getAllRegistartions() throws SQLException {
-	    List<application> applications = new ArrayList<>();
+	public List<Application> getAllRegistartions() throws SQLException {
+	    List<Application> Applications = new ArrayList<>();
 	    
 	    try {
 	    	con=DBconnect.getConnection();
@@ -104,17 +104,17 @@ public class applicationUtilImpl implements ApplicationUtill {
 		            Double price = rs.getDouble("price");
 		            String ownerId =rs.getString("ownerId");
 		            String status = rs.getString("status");
-		            application regAppli = new application(vType, vModelName, vBrand, noOfSeats, price,ownerId);
+		            Application regAppli = new Application(vType, vModelName, vBrand, noOfSeats, price,ownerId);
 		            regAppli.setStatus(status);
 		            regAppli.setId(id);
-		            applications.add(regAppli);
+		            Applications.add(regAppli);
 		        }
 	    }catch(Exception e) {
 			e.printStackTrace();
 		}
 
-		System.out.println(applications);
-	    return applications;
+		System.out.println(Applications);
+	    return Applications;
 	}
 	
 	public vehicle getRegistrationFromId(String idn) throws SQLException {

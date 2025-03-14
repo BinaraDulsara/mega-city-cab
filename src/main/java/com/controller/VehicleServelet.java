@@ -1,9 +1,9 @@
 
 package com.controller;
 
-import com.dao.vehicleUtil;
+import com.dao.VehicleUtil;
 import com.model.vehicle;
-import com.dao.impl.vehicleUtilImpl;
+import com.dao.impl.VehicleUtilImpl;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -18,9 +18,9 @@ import java.util.List;
  * Servlet implementation class vehicleServelet
  */
 @WebServlet("/vehicleServelet")
-public class vehicleServelet extends HttpServlet {
+public class VehicleServelet extends HttpServlet {
     private static final long serialVersionUID = 1L;
-    private vehicleUtil vehicleUtil = new vehicleUtilImpl();
+    private VehicleUtil vehicleUtil = new VehicleUtilImpl();
 
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

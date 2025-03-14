@@ -11,10 +11,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.model.newUser;
-import com.dao.impl.newUserUtilImpl;
-import com.model.user;
-import com.dao.impl.userDbUtilImpl;
+import com.model.NewUser;
+import com.dao.impl.NewUserUtilImpl;
+import com.model.User;
+import com.dao.impl.UserDbUtilImpl;
 
 /**
  * Servlet implementation class UserServlet
@@ -22,15 +22,15 @@ import com.dao.impl.userDbUtilImpl;
 @WebServlet("/UserServlet")
 public class UserServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private newUserUtilImpl newUserUtilImpl = new newUserUtilImpl();
-	private userDbUtilImpl userDbUtilImpl = new userDbUtilImpl();
+	private NewUserUtilImpl newUserUtilImpl = new NewUserUtilImpl();
+	private UserDbUtilImpl userDbUtilImpl = new UserDbUtilImpl();
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String task = request.getParameter("task");
 		
 		if("changePW".equals(task)) {
 			String id = request.getParameter("userId");
-			user u1 = userDbUtilImpl.getUserFromId(id);
+			User u1 = userDbUtilImpl.getUserFromId(id);
 			String currentPassword = request.getParameter("currentPassword");
 			String newPw = request.getParameter("newPassword");	
 			String confirmPW = request.getParameter("confirmPassword");
@@ -72,12 +72,12 @@ public class UserServlet extends HttpServlet {
 
 	        try {
 	            // Fetch all users from the database
-	            List<user> users = userDbUtilImpl.getAllUsers();
+	            List<User> users = userDbUtilImpl.getAllUsers();
 	            
 	            // Set users as a request attribute
 	            request.setAttribute("users", users);
 	            
-	            List<newUser> newuser = newUserUtilImpl.getAllNewUsers();
+	            List<NewUser> newuser = newUserUtilImpl.getAllNewUsers();
 	            request.setAttribute("newUsers", newuser);
 	            
 	            if (users.isEmpty()) {
@@ -121,8 +121,8 @@ public class UserServlet extends HttpServlet {
 			 boolean result = newUserUtilImpl.updateUser(UserId,"accept");
 			 if(result) {
 				try { 
-				 List<user> users = userDbUtilImpl.getAllUsers();
-				 List<newUser> newuser = newUserUtilImpl.getAllNewUsers();
+				 List<User> users = userDbUtilImpl.getAllUsers();
+				 List<NewUser> newuser = newUserUtilImpl.getAllNewUsers();
 		            // Set users as a request attribute
 		          request.setAttribute("users", users);
 		          request.setAttribute("newUsers", newuser);
@@ -143,8 +143,8 @@ public class UserServlet extends HttpServlet {
 			 boolean result = newUserUtilImpl.updateUser(UserId,"delete");
 			 if(result) {
 				try { 
-				 List<user> users = userDbUtilImpl.getAllUsers();
-				 List<newUser> newuser = newUserUtilImpl.getAllNewUsers();
+				 List<User> users = userDbUtilImpl.getAllUsers();
+				 List<NewUser> newuser = newUserUtilImpl.getAllNewUsers();
 		            // Set users as a request attribute
 		          request.setAttribute("users", users);
 		          request.setAttribute("newUsers", newuser);
@@ -168,7 +168,7 @@ public class UserServlet extends HttpServlet {
         String role = request.getParameter("role");
         
         // Create a new user object
-        newUser newUser1 = new newUser(name, password, gmail, phoneNumber, role, "unverified");
+        NewUser newUser1 = new NewUser(name, password, gmail, phoneNumber, role, "unverified");
 		boolean verification = newUser1.isVerified();
 		if (!verification) {
 			response.getWriter().println("a new guys");

@@ -4,20 +4,20 @@ import static org.junit.Assert.*;
 import java.sql.SQLException;
 import java.util.List;
 
-import com.dao.impl.applicationUtilImpl;
+import com.dao.impl.ApplicationUtilImpl;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 
-import com.model.application;
+import com.model.Application;
 import com.model.vehicle;
 import org.junit.rules.TestWatcher;
 import org.junit.runner.Description;
 
-public class applicationUtilImplTest {
+public class ApplicationUtilImplTest {
 
-    private applicationUtilImpl applicationUtil;
+    private ApplicationUtilImpl applicationUtil;
 
     @Rule
     public TestWatcher watchman = new TestWatcher() {
@@ -35,7 +35,7 @@ public class applicationUtilImplTest {
     @Before
     public void setUp() throws Exception {
         // Initialize the object before each test
-        applicationUtil = new applicationUtilImpl();
+        applicationUtil = new ApplicationUtilImpl();
     }
 
     @After
@@ -45,7 +45,7 @@ public class applicationUtilImplTest {
 
     @Test
     public void testInsertData() {
-        application application1 = new application("SUV", "X5", "BMW", 5, 60000.0, "owner123");
+        Application application1 = new Application("SUV", "X5", "BMW", 5, 60000.0, "owner123");
         boolean result = applicationUtil.insertData(application1);
         assertTrue("Insertion should be successful", result);
     }
@@ -54,9 +54,9 @@ public class applicationUtilImplTest {
     public void testGetAllRegistrationsOfUser() {
         String ownerId = "owner123";
         try {
-            List<application> applications = applicationUtil.getAllRegistartionsOfUser(ownerId);
-            assertNotNull("List should not be null", applications);
-            assertFalse("List should not be empty", applications.isEmpty());
+            List<Application> Applications = applicationUtil.getAllRegistartionsOfUser(ownerId);
+            assertNotNull("List should not be null", Applications);
+            assertFalse("List should not be empty", Applications.isEmpty());
         } catch (SQLException e) {
             fail("SQL Exception occurred: " + e.getMessage());
         }
@@ -65,9 +65,9 @@ public class applicationUtilImplTest {
     @Test
     public void testGetAllRegistrations() {
         try {
-            List<application> applications = applicationUtil.getAllRegistartions();
-            assertNotNull("List should not be null", applications);
-            assertFalse("List should not be empty", applications.isEmpty());
+            List<Application> Applications = applicationUtil.getAllRegistartions();
+            assertNotNull("List should not be null", Applications);
+            assertFalse("List should not be empty", Applications.isEmpty());
         } catch (SQLException e) {
             fail("SQL Exception occurred: " + e.getMessage());
         }

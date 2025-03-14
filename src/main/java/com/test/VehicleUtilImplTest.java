@@ -4,7 +4,7 @@ import static org.junit.Assert.*;
 import java.sql.SQLException;
 import java.util.List;
 
-import com.dao.impl.vehicleUtilImpl;
+import com.dao.impl.VehicleUtilImpl;
 import com.model.vehicle;
 import org.junit.After;
 import org.junit.Before;
@@ -13,9 +13,9 @@ import org.junit.Test;
 import org.junit.rules.TestWatcher;
 import org.junit.runner.Description;
 
-public class vehicleUtilImplTest {
+public class VehicleUtilImplTest {
 
-    private vehicleUtilImpl vehicleUtil;
+    private VehicleUtilImpl vehicleUtil;
 
     @Rule
     public TestWatcher watchman = new TestWatcher() {
@@ -33,7 +33,7 @@ public class vehicleUtilImplTest {
     @Before
     public void setUp() throws Exception {
         // Initialize the object before each test
-        vehicleUtil = new vehicleUtilImpl();
+        vehicleUtil = new VehicleUtilImpl();
     }
 
     @After

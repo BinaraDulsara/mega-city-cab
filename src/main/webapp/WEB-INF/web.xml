@@ -7,7 +7,7 @@
          
 	<servlet>
 		<servlet-name>login</servlet-name>
-		<servlet-class>com.controller.loginServlet</servlet-class>
+		<servlet-class>com.controller.LoginServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>login</servlet-name>
@@ -17,7 +17,7 @@
 
 	<servlet>
     	<servlet-name>viewUsersServelet</servlet-name>
-    	<servlet-class>com.controller.viewUsersServelet</servlet-class>
+    	<servlet-class>com.controller.ViewUsersServelet</servlet-class>
 	</servlet>
 
 	<servlet-mapping>
@@ -28,7 +28,7 @@
 	
 	<servlet>
     <servlet-name>submitApplication</servlet-name>
-    <servlet-class>com.controller.submitApplication</servlet-class>
+    <servlet-class>com.controller.SubmitApplication</servlet-class>
 	</servlet>
 
 	<servlet-mapping>
@@ -38,7 +38,7 @@
 
 	<servlet>
     <servlet-name>seeApplicationsServlet</servlet-name>
-    <servlet-class>com.controller.seeApplicationsServlet</servlet-class>
+    <servlet-class>com.controller.SeeApplicationsServlet</servlet-class>
 	</servlet>
 
 	<servlet-mapping>

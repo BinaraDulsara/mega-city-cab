@@ -1,9 +1,9 @@
 package com.model;
 
-public class newUser extends user {
+public class NewUser extends User {
 	private boolean verified;
 	
-	public newUser( String name, String password, String gmail, String phoneNumber, String role,String verification) {
+	public NewUser(String name, String password, String gmail, String phoneNumber, String role, String verification) {
 		super( name, password, gmail, phoneNumber, role);
 		this.verified=this.updateVerified(verification);
 	}

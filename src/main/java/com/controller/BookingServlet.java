@@ -10,15 +10,15 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.dao.bookingUtil;
+import com.dao.BookingUtil;
 import com.model.booking;
-import com.dao.impl.bookingUtilImpl;
+import com.dao.impl.BookingUtilImpl;
 
 
 @WebServlet("/bookingServlet")
-public class bookingServlet extends HttpServlet {
+public class BookingServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private bookingUtil bookingUtil = new bookingUtilImpl();
+	private BookingUtil bookingUtil = new BookingUtilImpl();
        
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

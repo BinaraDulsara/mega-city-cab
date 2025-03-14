@@ -1,7 +1,7 @@
 package com.controller;
 
-import com.dao.impl.applicationUtilImpl;
-import com.model.application;
+import com.dao.impl.ApplicationUtilImpl;
+import com.model.Application;
 
 import java.io.IOException;
 import java.util.List;
@@ -17,9 +17,9 @@ import javax.servlet.http.HttpServletResponse;
  * Servlet implementation class seeApplicationsServlet
  */
 @WebServlet("/seeApplicationsServlet")
-public class seeApplicationsServlet extends HttpServlet {
+public class SeeApplicationsServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private applicationUtilImpl applicationUtilImpl = new applicationUtilImpl();
+	private ApplicationUtilImpl applicationUtilImpl = new ApplicationUtilImpl();
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String id= request.getParameter("id");
@@ -29,7 +29,7 @@ public class seeApplicationsServlet extends HttpServlet {
 		
 		try {
 			
-			List<application> Applications = applicationUtilImpl.getAllRegistartionsOfUser(id);
+			List<Application> Applications = applicationUtilImpl.getAllRegistartionsOfUser(id);
 			
 			   if (!Applications.isEmpty()) {
 	                response.getWriter().println("hi");

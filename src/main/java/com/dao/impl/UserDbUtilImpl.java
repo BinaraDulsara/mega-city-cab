@@ -1,8 +1,8 @@
 package com.dao.impl;
 
-import com.dao.userDbUtil;
+import com.dao.UserDbUtil;
 import com.db.DBconnect;
-import com.model.user;
+import com.model.User;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class userDbUtilImpl implements userDbUtil {
+public class UserDbUtilImpl implements UserDbUtil {
 	private static boolean isSuccess;
 	protected static Connection con = null;
 	protected static Statement stmt = null;
@@ -41,9 +41,9 @@ public class userDbUtilImpl implements userDbUtil {
 
 
 
-public List<user> getUser(String userName) {
+public List<User> getUser(String userName) {
 	
-	ArrayList<user> user = new ArrayList<>();
+	ArrayList<User> user = new ArrayList<>();
 	
 	try {
 		
@@ -61,7 +61,7 @@ public List<user> getUser(String userName) {
 			String role = rs.getString(6);
 			
 			
-			user cus = new user(name,password,email,phone,role);
+			User cus = new User(name,password,email,phone,role);
 			cus.setId(id);
 			user.add(cus);
 		}
@@ -95,8 +95,8 @@ public String getUserRole(String userName) {
 
 
 
-public List<user> getAllUsers() throws SQLException {
-    List<user> users = new ArrayList<>();
+public List<User> getAllUsers() throws SQLException {
+    List<User> users = new ArrayList<>();
     
     try {
     	con=DBconnect.getConnection();
@@ -110,7 +110,7 @@ public List<user> getAllUsers() throws SQLException {
 	            String email = rs.getString("gmail");
 	            String phoneNumber = rs.getString("phonNumber");
 	            String role = rs.getString("role");
-	            user user1 = new user( name, password, email, phoneNumber, role);
+	            User user1 = new User( name, password, email, phoneNumber, role);
 	            user1.setId(id);
 	            users.add(user1);
 	        }
@@ -122,7 +122,7 @@ public List<user> getAllUsers() throws SQLException {
     return users;
 }
 
-public user getUserFromId(String id) {
+public User getUserFromId(String id) {
 	try {
     	con=DBconnect.getConnection();
 		stmt = con.createStatement();
@@ -135,7 +135,7 @@ public user getUserFromId(String id) {
 	            String email = rs.getString("gmail");
 	            String phoneNumber = rs.getString("phonNumber");
 	            String role = rs.getString("role");
-	            user user1 = new user( name, password, email, phoneNumber, role);
+	            User user1 = new User( name, password, email, phoneNumber, role);
 	            user1.setId(id1);
 	            return user1;
 	            

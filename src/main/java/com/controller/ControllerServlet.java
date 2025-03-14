@@ -3,10 +3,10 @@ package com.controller;
 import java.io.IOException;
 import java.util.List;
 
-import com.dao.impl.applicationUtilImpl;
-import com.dao.impl.userDbUtilImpl;
-import com.model.application;
-import com.model.user;
+import com.dao.impl.ApplicationUtilImpl;
+import com.dao.impl.UserDbUtilImpl;
+import com.model.Application;
+import com.model.User;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -19,10 +19,10 @@ import javax.servlet.http.HttpServletResponse;
  * Servlet implementation class controllerServlet
  */
 @WebServlet("/controllerServlet")
-public class controllerServlet extends HttpServlet {
+public class ControllerServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private applicationUtilImpl applicationUtilImpl = new applicationUtilImpl();
-	private userDbUtilImpl userDbUtilImpl = new userDbUtilImpl();
+	private ApplicationUtilImpl applicationUtilImpl = new ApplicationUtilImpl();
+	private UserDbUtilImpl userDbUtilImpl = new UserDbUtilImpl();
 
   
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -33,7 +33,7 @@ public class controllerServlet extends HttpServlet {
 
         try {
             // Fetch all users from the database
-            List<user> users = userDbUtilImpl.getAllUsers();
+            List<User> users = userDbUtilImpl.getAllUsers();
             
             // Set users as a request attribute
             request.setAttribute("users", users);
@@ -60,7 +60,7 @@ public class controllerServlet extends HttpServlet {
 			
 			try {
 				
-				List<application> Applications = applicationUtilImpl.getAllRegistartions();
+				List<Application> Applications = applicationUtilImpl.getAllRegistartions();
 				   if (!Applications.isEmpty()) {
 		                response.getWriter().println("hi");
 		                request.setAttribute("Applications", Applications);
