@@ -1,6 +1,6 @@
 package com.dao.impl;
 
-import com.dao.UserDbUtil;
+import com.dao.userDbUtil;
 import com.db.DBconnect;
 import com.model.User;
 
@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class UserDbUtilImpl implements UserDbUtil {
+public class UserDbUtilImpl implements userDbUtil {
 	private static boolean isSuccess;
 	protected static Connection con = null;
 	protected static Statement stmt = null;

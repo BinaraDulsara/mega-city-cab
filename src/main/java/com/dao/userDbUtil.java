@@ -5,7 +5,7 @@ import com.model.User;
 import java.sql.SQLException;
 import java.util.List;
 
-public interface UserDbUtil {
+public interface userDbUtil {
     boolean validate(String username, String password);
     List<User> getUser(String userName);
     String getUserRole(String userName);
