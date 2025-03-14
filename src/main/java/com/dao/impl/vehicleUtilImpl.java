@@ -35,7 +35,6 @@ public class vehicleUtilImpl implements vehicleUtil {
             String status = v1.getStatus();
             sql = "INSERT INTO vehicle (vType, vModelName, vBrand, noOfSeats, price, ownerId,status) " + "VALUES ('" + vType + "', '" + vModelName + "', '" + vBrand + "', " + noOfSeats + ", " + price + ", '" + ownerId + "','" + status + "')";
 
-
             int rowsAffected = stmt.executeUpdate(sql);
 
             // Check if insertion was successful

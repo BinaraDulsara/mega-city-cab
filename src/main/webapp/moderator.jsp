@@ -23,7 +23,6 @@
             margin-top: 20px;
             align-items: center; /* Center items vertically */
         }
-
         .btn-group .btn {
             margin: 0 10px; /* Add some spacing between buttons */
         }

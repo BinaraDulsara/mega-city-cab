@@ -11,5 +11,4 @@ public interface vehicleUtil {
     boolean makeUnavailable(String id);
     boolean makeAvailable(String id);
     List<vehicle> getAvailableVehicles() throws SQLException;
-
 }
