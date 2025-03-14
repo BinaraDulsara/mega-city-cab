@@ -48,8 +48,6 @@
         <button type="submit" class="btn btn-danger">Logout</button>
     </form>
 </div>
-
-
 <div class="container">
     <div class="row">
         <div class="col-md-8 offset-md-2">
@@ -83,7 +81,6 @@
         </div>
     </div>
 </div>
-
 <c:set var="userId" value="${sessionScope.userDetails[0].id}" />
 
 <div class="container">
