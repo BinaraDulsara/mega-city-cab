@@ -33,13 +33,13 @@ public class newUserUtilImplTest {
 
     @Before
     public void setUp() throws Exception {
-        // Initialize the object before each test
+
         newUserUtil = new newUserUtilImpl();
     }
 
     @After
     public void tearDown() throws Exception {
-        // Cleanup after each test
+
     }
 
     @Test
@@ -67,10 +67,5 @@ public class newUserUtilImplTest {
         assertTrue("User should be accepted and verified", result);
     }
 
-    // @Test
-    // public void testUpdateUserDelete() {
-    //     String userId = "2"; // Assuming a user with ID 2 exists
-    //     boolean result = newUserUtil.updateUser(userId, "delete");
-    //     assertTrue("User should be deleted successfully", result);
-    // }
+
 }

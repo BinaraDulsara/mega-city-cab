@@ -90,7 +90,6 @@ public class applicationUtilImplTest {
         boolean result = applicationUtil.approveApplication(id);
         assertTrue("Approval should be successful", result);
     }
-
     @Test
     public void testDeleteApplication() {
         String id = "34"; // Assuming an application with ID 1 exists
