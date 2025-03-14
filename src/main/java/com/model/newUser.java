@@ -23,5 +23,4 @@ public class newUser extends user {
 			return false;
 		}
 	}
-
 }
