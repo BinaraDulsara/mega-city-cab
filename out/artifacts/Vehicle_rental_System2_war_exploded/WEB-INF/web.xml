@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+         http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+         
+	<servlet>
+		<servlet-name>login</servlet-name>
+		<servlet-class>com.controller.loginServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>login</servlet-name>
+		<url-pattern>/log</url-pattern>
+	</servlet-mapping>
+	
+
+	<servlet>
+    	<servlet-name>viewUsersServelet</servlet-name>
+    	<servlet-class>com.controller.viewUsersServelet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+    	<servlet-name>viewUsersServelet</servlet-name>
+    	<url-pattern>/viewUser</url-pattern>
+	</servlet-mapping>
+	
+	
+	<servlet>
+    <servlet-name>submitApplication</servlet-name>
+    <servlet-class>com.controller.submitApplication</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+    <servlet-name>submitApplication</servlet-name>
+    <url-pattern>/sR</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+    <servlet-name>seeApplicationsServlet</servlet-name>
+    <servlet-class>com.controller.seeApplicationsServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+   		 <servlet-name>seeApplicationsServlet</servlet-name>
+    	<url-pattern>/viewRegistrations</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+    <servlet-name>applicationSevlet</servlet-name>
+    <servlet-class>com.vehicleApplication.applicationSevlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+    	<servlet-name>applicationSevlet</servlet-name>
+   	 <url-pattern>/aH</url-pattern>
+	</servlet-mapping>
+	
+	
+	
+
+	
+	
+	
+</web-app>
