@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
  * Servlet implementation class seeApplicationsServlet
  */
 @WebServlet("/seeApplicationsServlet")
-public class SeeApplicationsServlet extends HttpServlet {
+public class seeApplicationsServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private ApplicationUtilImpl applicationUtilImpl = new ApplicationUtilImpl();
 

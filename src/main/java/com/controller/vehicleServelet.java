@@ -18,7 +18,7 @@ import java.util.List;
  * Servlet implementation class vehicleServelet
  */
 @WebServlet("/vehicleServelet")
-public class VehicleServelet extends HttpServlet {
+public class vehicleServelet extends HttpServlet {
     private static final long serialVersionUID = 1L;
     private VehicleUtil vehicleUtil = new VehicleUtilImpl();
 

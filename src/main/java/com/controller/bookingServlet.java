@@ -16,7 +16,7 @@ import com.dao.impl.BookingUtilImpl;
 
 
 @WebServlet("/bookingServlet")
-public class BookingServlet extends HttpServlet {
+public class bookingServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private BookingUtil bookingUtil = new BookingUtilImpl();
        

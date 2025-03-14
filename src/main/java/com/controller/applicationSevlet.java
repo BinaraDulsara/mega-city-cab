@@ -19,7 +19,7 @@ import javax.servlet.http.HttpServletResponse;
  * Servlet implementation class applicationSevlet
  */
 @WebServlet("/applicationServlet")
-public class ApplicationSevlet extends HttpServlet {
+public class applicationSevlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private ApplicationUtilImpl applicationUtilImpl = new ApplicationUtilImpl();
 	private VehicleUtilImpl vehicleUtilImpl = new VehicleUtilImpl();

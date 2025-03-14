@@ -19,7 +19,7 @@ import javax.servlet.http.HttpServletResponse;
  * Servlet implementation class controllerServlet
  */
 @WebServlet("/controllerServlet")
-public class ControllerServlet extends HttpServlet {
+public class controllerServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private ApplicationUtilImpl applicationUtilImpl = new ApplicationUtilImpl();
 	private UserDbUtilImpl userDbUtilImpl = new UserDbUtilImpl();
