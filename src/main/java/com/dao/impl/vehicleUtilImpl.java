@@ -25,7 +25,7 @@ public class vehicleUtilImpl implements vehicleUtil {
         try {
             con = DBconnect.getConnection();
             stmt = con.createStatement();
-
+            //there were some bugs remind me to check them later
             String vType = v1.getvType();
             String vModelName = v1.getvModelName();
             String vBrand = v1.getvBrand();
@@ -34,7 +34,6 @@ public class vehicleUtilImpl implements vehicleUtil {
             String ownerId = v1.getOwnerId();
             String status = v1.getStatus();
             sql = "INSERT INTO vehicle (vType, vModelName, vBrand, noOfSeats, price, ownerId,status) " + "VALUES ('" + vType + "', '" + vModelName + "', '" + vBrand + "', " + noOfSeats + ", " + price + ", '" + ownerId + "','" + status + "')";
-
 
             int rowsAffected = stmt.executeUpdate(sql);
 
