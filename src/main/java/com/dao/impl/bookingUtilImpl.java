@@ -28,7 +28,7 @@ public class bookingUtilImpl implements bookingUtil {
     		 con = DBconnect.getConnection();
     		 stmt = con.createStatement();
 		
-		        // SQL query to insert a new booking
+
 		        String sql = "INSERT INTO bookings (userid, vid, datefrom, noOfdays, price) VALUES ('" 
 		            + book.getUserId() + "', '" 
 		            + book.getVid() + "', '" 
@@ -37,8 +37,7 @@ public class bookingUtilImpl implements bookingUtil {
 		            + book.getTotal() + ")";
 		
 		        int rowsAffected = stmt.executeUpdate(sql);
-		        
-		        // Check if insertion was successful
+
 		        if (rowsAffected > 0) {
 		            return true;
 		        } else {

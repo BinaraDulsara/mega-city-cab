@@ -11,8 +11,6 @@ import com.model.user;
 
 public class newUserUtilImpl extends userDbUtilImpl implements newUserUtil {
 
-
-
 	public  boolean addUser(user newuser1) {
 	    	
 	    	
@@ -20,14 +18,13 @@ public class newUserUtilImpl extends userDbUtilImpl implements newUserUtil {
     		 con = DBconnect.getConnection();
     		 stmt = con.createStatement();
 		
-		        // SQL query to insert a new booking
+
     		  String sql = "INSERT INTO user (name, password, gmail, phonNumber, role,verification) VALUES ('" + newuser1.getName() + "', '" + 
                       newuser1.getPassword() + "', '" + newuser1.getGmail() + "', '" + newuser1.getPhoneNumber() + "', '" + 
                       newuser1.getRole() + "','Unverified')";
 		
 		        int rowsAffected = stmt.executeUpdate(sql);
-		        
-		        // Check if insertion was successful
+
 		        if (rowsAffected > 0) {
 		            return true;
 		        } else {
@@ -86,14 +83,13 @@ public class newUserUtilImpl extends userDbUtilImpl implements newUserUtil {
 		   	 		 sql = "Delete from user where id=" + UserId;
 		   	 		}
 
-		        // Execute the update query
 		        int rowsAffected = stmt.executeUpdate(sql);
 
-		        // If the number of rows affected is greater than 0, update was successful
+
 		        return rowsAffected > 0;
 		    } catch (SQLException e) {
 		        e.printStackTrace();
-		        return false; // Return false if an exception occurs
+		        return false;
 		    } finally {
 		        try {
 		            if (stmt != null) {

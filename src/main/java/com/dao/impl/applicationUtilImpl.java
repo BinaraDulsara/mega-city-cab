@@ -37,10 +37,10 @@ public class applicationUtilImpl implements ApplicationUtill {
 		                     noOfSeats + ", " + price + ", '" + ownerId + "','"+status+"')";
 
 
-//			System.out.println(sql);
+
 		      int rowsAffected = stmt.executeUpdate(sql);
 			System.out.println(rowsAffected);
-		        // Check if insertion was successful
+
 		        if (rowsAffected > 0) {
 		            return true;
 		        } else {

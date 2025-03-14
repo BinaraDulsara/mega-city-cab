@@ -25,7 +25,7 @@ public class vehicleUtilImpl implements vehicleUtil {
         try {
             con = DBconnect.getConnection();
             stmt = con.createStatement();
-
+            //there were some bugs remind me to check them later
             String vType = v1.getvType();
             String vModelName = v1.getvModelName();
             String vBrand = v1.getvBrand();
